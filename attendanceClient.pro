@@ -17,17 +17,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     createfoto.cpp \
+    dialog.cpp \
     infolesson.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     createfoto.h \
+    dialog.h \
     infolesson.h \
     mainwindow.h
 
 FORMS += \
     createfoto.ui \
+    dialog.ui \
     infolesson.ui \
     mainwindow.ui
 

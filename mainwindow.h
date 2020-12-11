@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+extern int s;
 #include <QMainWindow>
 #include <QTcpServer>
 #include <QTcpSocket>
@@ -49,6 +49,8 @@ private slots:
     void queryFoto();
 
     void on_searchStudent_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     bool changeTable;

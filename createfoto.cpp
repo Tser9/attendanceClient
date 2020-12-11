@@ -31,7 +31,7 @@ void createFoto::on_pushButton_clicked()
     camera->searchAndLock();
     cup->capture(QCoreApplication::applicationDirPath()+"/foto.jpg");
     camera->unlock();
-    emit foto()ж
+    emit foto();
 
     qDebug() << QCoreApplication::applicationDirPath()+"/foto.jpg";
 }

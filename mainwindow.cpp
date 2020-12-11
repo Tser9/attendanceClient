@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -115,12 +115,13 @@ void MainWindow::on_search_lecture_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
+    if(s==true){
     createFoto *cf = new createFoto(this);
     cf->show();
 
     connect(cf,SIGNAL(foto()), this, SLOT(queryFoto()));
 
-
+}else {  QMessageBox::warning(0,"Ошибка", "Вы не авторизованы!");}
 
 
     //QString pyCommand("python D:\\project\\attendance\\main.py \n"); //try with out " \n" also...
@@ -246,4 +247,19 @@ void MainWindow::on_searchStudent_clicked()
             ui->tableWidget->hideRow(i);
 
     }
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    if(s==false){Dialog win;
+     win.setModal(true);
+     win.exec();
+
+     if(s==true){
+         ui->pushButton_4->setText("Выйти из системы");
+     }
+   }else{
+ s=false;
+        ui->pushButton_4->setText("Войти в систему");
+ }
 }
